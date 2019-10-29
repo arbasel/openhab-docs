@@ -426,6 +426,11 @@ server {
     }
 }
 ```
+#### Ensuring that only an SSL connection is used
+
+Configuring the above does not prevent someone from accessing OpenHAB via the default url without having to enter the login cedentials are going via an SSL connection. To achieve this we want to allow only localhost to browse via 8080. This is enforced by editing /etc/defaults/openhab2 and setting OPENHAB_HTTP_ADDRESS=127.0.0.1
+
+After making the above change the OpenHAB service needs to be restarted.
 
 {: #nginx-https-security}
 #### Additional HTTPS Security
